@@ -22,7 +22,7 @@ const routes: Routes = [
     {
         path: 'products',
         component: ProductsComponent,
-        // canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
     },
     {
         path: '**',

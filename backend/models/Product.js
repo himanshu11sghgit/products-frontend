@@ -4,15 +4,15 @@ const bcrypt = require('bcrypt');
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please enter customer name'],
+    required: [true, 'Please enter product name'],
   },
   brand: {
     type: String,
-    required: [true, 'Please enter customer address'],
+    required: [true, 'Please enter brand name'],
   },
   price: {
     type: String,
-    required: [true, 'Please enter product total'],
+    required: [true, 'Please enter price'],
   },
   purchaseDate: {
     type: String,
@@ -22,6 +22,6 @@ const productSchema = new mongoose.Schema({
 
 
 
-const product = mongoose.model('product', productSchema);
+const Product = mongoose.model('product', productSchema);
 
-module.exports = product;
+module.exports = Product;
