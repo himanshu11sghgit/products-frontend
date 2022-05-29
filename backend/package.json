@@ -16,16 +16,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/himanshu11sghgit/order-management-backend.git"
-  },
-  "keywords": [],
-  "author": "Himanshu Singh",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/himanshu11sghgit/order-management-backend/issues"
-  },
-  "homepage": "https://github.com/himanshu11sghgit/order-management-backend#readme"
+  }
 }
