@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 
 // handle errors
 const handleErrors = (err) => {
-  console.log(err.message, err.code);
   let errors = { email: '', password: '' };
 
   if (err.message === 'incorrect email') {
@@ -37,7 +36,6 @@ const createToken = (id) => {
 };
 
 signup_post = async (req, res) => {
-  console.log(req.body)
   const { email, password, name, mobile } = req.body;
 
   try {

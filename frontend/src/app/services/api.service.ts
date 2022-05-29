@@ -33,16 +33,4 @@ export class ApiService {
     return this.http.post<any>(url, body, {headers: this.setHeaders()}).pipe(map((res: Response) => res), catchError((error: Response) => throwError(error)));
   }
 
-
-  put(path: string, body: any): Observable<any>{
-    const url = environment.api_url + '/' + path;
-    return this.http.put<any>(url, body, {headers: this.setHeaders()}).pipe(map((res: Response) => res), catchError((error: Response) => throwError(error)));
-  }
-
-  delete(path: string): Observable<any>{
-    const url = environment.api_url + '/' + path;
-    return this.http.delete<any>(url, {headers: this.setHeaders()}).pipe(map((res: Response) => res), catchError((error: Response) => throwError(error)));
-  }
-
-
 }

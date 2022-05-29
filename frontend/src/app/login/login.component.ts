@@ -52,8 +52,8 @@ export class LoginComponent implements OnInit {
       },
       err => {
         const error = err.error.errors
-        if (error.userName) {
-          this.toastMessageService.showError(error.userName)
+        if (error.email) {
+          this.toastMessageService.showError(error.email)
         } else if (error.password) {
           this.toastMessageService.showError(error.password)
         }
