@@ -37,6 +37,7 @@ const createToken = (id) => {
 };
 
 signup_post = async (req, res) => {
+  console.log(req.body)
   const { email, password, name, mobile } = req.body;
 
   try {

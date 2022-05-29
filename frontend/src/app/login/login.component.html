@@ -21,15 +21,15 @@
       <div class="input-field">
         <span class="fas fa-lock p-2"></span>
         <input type="text" name="password" formControlName="password" placeholder="Enter your Password" />
-        <button class="btn bg-white text-muted">
-          <span class="far fa-eye-slash"></span>
-        </button>
       </div>
       <div class="text-danger text-left" *ngIf="fm.password.touched && fm.password?.errors?.required">
         Password is Required
       </div>
     </div>
-    <button class="btn btn-block text-center my-3" [disabled]="loginForm.invalid" (click)="onSubmitForm()">Log
-      in</button>
+    <button class="btn btn-block text-center my-3" [disabled]="loginForm.invalid" (click)="onSubmitForm()">
+      Log in
+    </button>
+
+    <p class="text-center">Don't have an account <a routerLink="/signup">Sign up</a></p>
   </form>
 </div>

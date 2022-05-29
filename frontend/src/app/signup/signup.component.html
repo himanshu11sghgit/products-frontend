@@ -1,1 +1,101 @@
-<p>signup works!</p>
+<div class="wrapper bg-white">
+  <div class="h2 text-center">Sign up</div>
+  <div class="h4 text-muted text-center pt-2">Enter your details</div>
+  <form class="pt-3" [formGroup]="signupForm">
+
+    <div class="form-group py-2">
+        <div class="input-field">
+            <span class="far fa-user p-2"></span>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              formControlName="name"
+            />
+          </div>
+          <div
+            class="text-danger text-left"
+            *ngIf="fm.name.touched && fm.name?.errors?.required"
+          >
+            Name is Required
+          </div>
+    
+          <div class="text-danger text-left" *ngIf="fm?.name?.errors?.pattern">
+            Name is not valid
+          </div>
+    </div>
+
+    <div class="form-group py-2">
+      <div class="input-field">
+        <span class="far fa-user p-2"></span>
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+      </div>
+      <div
+        class="text-danger text-left"
+        *ngIf="fm.email.touched && fm.email?.errors?.required"
+      >
+        Email is Required
+      </div>
+
+      <div class="text-danger text-left" *ngIf="fm?.email?.errors?.pattern">
+        Email is not valid
+      </div>
+    </div>
+    <div class="form-group py-2">
+      <div class="input-field">
+        <span class="fas fa-lock p-2"></span>
+        <input
+          type="text"
+          name="password"
+          formControlName="password"
+          placeholder="Enter your Password"
+        />
+      </div>
+      <div
+        class="text-danger text-left"
+        *ngIf="fm.password.touched && fm.password?.errors?.required"
+      >
+        Password is Required
+      </div>
+    </div>
+
+    <div class="form-group py-1 pb-2">
+        <div class="input-field">
+            <span class="fas fa-address-book p-2"></span>
+            <input
+              type="text"
+              name="mobile"
+              placeholder="Mobile"
+              formControlName="mobile"
+            />
+          </div>
+          <div
+            class="text-danger text-left"
+            *ngIf="fm.mobile.touched && fm.mobile?.errors?.required"
+          >
+            Mobile is Required
+          </div>
+    
+          <div class="text-danger text-left" *ngIf="fm?.mobile?.errors?.pattern">
+            Mobile is not valid
+          </div>
+    </div>
+
+    <button
+      class="btn btn-block text-center my-3"
+      [disabled]="signupForm.invalid"
+      (click)="onSubmitForm()"
+    >
+      Sign up
+    </button>
+
+    <p class="text-center">
+      Already have an account <a routerLink="/login" class="cursor-pointer">Log in</a>
+    </p>
+  </form>
+</div>

@@ -46,11 +46,11 @@ export class LoginComponent implements OnInit {
   loginUser(loginData: any) {
     this.apiService.post('login', loginData).subscribe(
       data => {
-        localStorage.setItem('auth_token', data.token)
+        localStorage.setItem('auth_token', data.token);
+        this.loginForm.reset();
         this.router.navigate(['/products']);
       },
       err => {
-        console.log(err)
         const error = err.error.errors
         if (error.userName) {
           this.toastMessageService.showError(error.userName)
